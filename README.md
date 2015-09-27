@@ -1,56 +1,56 @@
 MC SVG Icon is a simple plugin to enable easy use of external SVG icons in EE2.
 
 
-# Usage #
+Usage
 ========================================
 
-	## Standalone (no index.php changes) ##
-	--------------------------------------------------
+Standalone (no index.php changes)
+--------------------------------------------------
 
-	`{exp:svg:single:[full_symbol_ID] file="/relative/path/to/svgdefs.svg"}`
+`{exp:svg:single:[full_symbol_ID] file="/relative/path/to/svgdefs.svg"}`
 
-	For example:
+For example:
 
-	`{exp:svg:single:icon-home file="/assets/svg/svgdefs.svg"}`
-
-
-	## Single tag: ##
-	--------------------------------------------------
-
-	`{exp:svg:single:[symbol_ID]}`
-
-	Where `[symbol_ID]` is the ID of the desired `<symbol>`, sans whatever you specified for 'icon_svg_symbol_id_prefix' in the index.php. So to show the home icon, use `{exp:svg:single:home}`
+`{exp:svg:single:icon-home file="/assets/svg/svgdefs.svg"}`
 
 
-	## Tag Pair: ##
-	--------------------------------------------------
+Single tag:
+--------------------------------------------------
 
-	`{exp:svg:pair}[symbol_ID]{/exp:svg:pair}`
+`{exp:svg:single:[symbol_ID]}`
+
+Where `[symbol_ID]` is the ID of the desired `<symbol>`, sans whatever you specified for 'icon_svg_symbol_id_prefix' in the index.php. So to show the home icon, use `{exp:svg:single:home}`
+
+
+Tag Pair:
+--------------------------------------------------
+
+`{exp:svg:pair}[symbol_ID]{/exp:svg:pair}`
 
 
 
-# Parameters #
+Parameters
 ========================================
 
 
-	## `class="myclass"` ##
-	--------------------------------------------------
-	Adds the specified class(es) to the generated <svg> tag.
+`class="myclass"`
+--------------------------------------------------
+Adds the specified class(es) to the generated <svg> tag.
 
 
-	## `title="My Title"` ##
-	--------------------------------------------------
-	Adds a <title> tag to the generated <svg> and links it to the <use> tag using aria-labelledby.
+`title="My Title"`
+--------------------------------------------------
+Adds a <title> tag to the generated <svg> and links it to the <use> tag using aria-labelledby.
 
 
-	## `file="/relative/path/to/svgdefs.svg"` ##
-	--------------------------------------------------
-	The .svg file to use for this instance. It can either be used as an override of the regular file specified in index.php, or as a way of avoiding alterations to index.php altogether.
+`file="/relative/path/to/svgdefs.svg"`
+--------------------------------------------------
+The .svg file to use for this instance. It can either be used as an override of the regular file specified in index.php, or as a way of avoiding alterations to index.php altogether.
 
-	The path should be relative to the web root, as it will be used by the browser to find the external .svg file.
+The path should be relative to the web root, as it will be used by the browser to find the external .svg file.
 
 
-# Config vars in index.php (optional; recommended) #
+Config vars in index.php (optional; recommended)
 ========================================
 
 Add to index.php (or your equivalent) the following:
@@ -62,7 +62,7 @@ Add to index.php (or your equivalent) the following:
 (The prefix is what you see in the 'id' parameter on line 3 below)
 
 
-# Sample svgdefs.svg #
+Sample svgdefs.svg
 ========================================
 
 	1:	<svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -76,7 +76,7 @@ Add to index.php (or your equivalent) the following:
 	9:	</svg>
 
 
-# Sample Output #
+Sample Output
 ========================================
 
 Assuming the following settings in index.php:
