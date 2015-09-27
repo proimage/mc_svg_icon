@@ -19,7 +19,7 @@ Single tag:
 
 `{exp:svg:single:[symbol_ID]}`
 
-Where `[symbol_ID]` is the ID of the desired `<symbol>`, sans whatever you specified for 'icon_svg_symbol_id_prefix' in the index.php. So to show the home icon, use `{exp:svg:single:home}`
+Where `[symbol_ID]` is the ID of the desired `<symbol>`, sans whatever you specified for `icon_svg_symbol_id_prefix` in the index.php. So to show the home icon, use `{exp:svg:single:home}`.
 
 
 Tag Pair:
@@ -35,25 +35,25 @@ Parameters
 
 `class="myclass"`
 --------------------------------------------------
-Adds the specified class(es) to the generated <svg> tag.
+Adds the specified class(es) to the generated `<svg>` tag.
 
 
 `title="My Title"`
 --------------------------------------------------
-Adds a <title> tag to the generated <svg> and links it to the <use> tag using aria-labelledby.
+Adds a `<title>` tag to the generated `<svg>` and links it to the `<use>` tag using `aria-labelledby`.
 
 
 `file="/relative/path/to/svgdefs.svg"`
 --------------------------------------------------
-The .svg file to use for this instance. It can either be used as an override of the regular file specified in index.php, or as a way of avoiding alterations to index.php altogether.
+The .svg file to use for this instance. It can either be used as an override of the regular file specified in `index.php`, or as a way of avoiding alterations to `index.php` altogether.
 
-The path should be relative to the web root, as it will be used by the browser to find the external .svg file.
+The path should be relative to the web root, as it will be used by the browser to find the external `.svg` file.
 
 
-Config vars in index.php (optional; recommended)
+Config vars in `index.php` (optional; recommended)
 ========================================
 
-Add to index.php (or your equivalent) the following:
+Add to `index.php` (or your equivalent) the following:
 
 	$assign_to_config['icon_svg_file'] = '/relative/path/to/svgdefs.svg';
 	$assign_to_config['icon_svg_symbol_id_prefix'] = 'icon-';
@@ -79,7 +79,7 @@ Sample svgdefs.svg
 Sample Output
 ========================================
 
-Assuming the following settings in index.php:
+Assuming the following settings in `index.php`:
 
 	$assign_to_config['icon_svg_file'] = '/assets/svg/svgdefs.svg';
 	$assign_to_config['icon_svg_global_class'] = 'icon';
