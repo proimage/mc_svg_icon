@@ -224,8 +224,8 @@ Sample Output
 Assuming the following settings in index.php:
 
 $assign_to_config['icon_svg_file'] = '/assets/svg/svgdefs.svg';
-$assign_to_config['icon_svg_global_class'] = 'icon';
 $assign_to_config['icon_svg_symbol_id_prefix'] = 'icon-';
+$assign_to_config['icon_svg_global_class'] = 'icon';
 
 The template code {exp:svg:single:home class="myclass"} would produce:
 
@@ -257,5 +257,5 @@ However, if you copy them into a .php file (for example, your index.php), the PH
 }
 
 
-/* End of file pi.icon.php */
-/* Location: /system/expressionengine/third_party/icon/pi.icon.php */
+/* End of file pi.svg.php */
+/* Location: /system/expressionengine/third_party/svg/pi.svg.php */
