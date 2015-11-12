@@ -10,7 +10,7 @@
 
 $plugin_info = array(
 	'pi_name'       => 'MC SVG Icons',
-	'pi_version'    => '1.0',
+	'pi_version'    => '1.1',
 	'pi_author'     => 'Michael C.',
 	'pi_author_url' => 'http://www.pro-image.co.il',
 	'pi_description'=> 'Simple plugin to enable easy use of external SVG icons in EE2.',
@@ -102,9 +102,16 @@ class Svg {
 	// Get icon title
 		$title = $this->EE->TMPL->fetch_param('title');
 
+	// Get icon fill color
+		$fill = $this->EE->TMPL->fetch_param('fill');
+
 
 	// Build the output
 		$icon_svg = '<svg class="' . $global_class . $prefix . $icon_symbol . $extra_classes . '"><use xlink:href="' . $icon_svg_file . "#" . $prefix . $icon_symbol . '"';
+		if ($fill)
+		{
+			$icon_svg .= ' fill="' . $fill . '"';
+		}
 		if ($title)
 		{
 			$icon_svg .= ' aria-labelledby="title__' . $icon_symbol . '"><title id="title__' . $icon_symbol . '">' . $title . '</title>';
@@ -183,6 +190,11 @@ Parameters
   Adds a <title> tag to the generated <svg> and links it to the <use> tag using aria-labelledby.
 
 
+  fill="#bada55" (added in v1.1)
+  --------------------------------------------------
+  Applies the specified fill color to the generated <use> tag.
+
+
   file="/relative/path/to/svgdefs.svg"
   --------------------------------------------------
   The .svg file to use for this instance. It can either be used as an override of the regular file specified in index.php, or as a way of avoiding alterations to index.php altogether.
@@ -248,6 +260,15 @@ A Note of Copy-Pasta Warning
 Many lines in this usage text are indented using special em-space characters (since EE strips away any tabs or regular spaces). If you copy these into an EE template, it will translate them into &emsp; entities and you'll merely end up with some extra spacing here and there.
 
 However, if you copy them into a .php file (for example, your index.php), the PHP processor will throw an error... so don't do that.
+
+
+Version History
+========================================
+
+1.1 (2015-11-12) - Added `fill` parameter for fill color overriding
+
+1.0 (2015-10-??) - Initial release
+
 
 <?php
 		$buffer = ob_get_contents();
