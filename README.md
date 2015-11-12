@@ -43,6 +43,11 @@ Adds the specified class(es) to the generated `<svg>` tag.
 Adds a `<title>` tag to the generated `<svg>` and links it to the `<use>` tag using `aria-labelledby`.
 
 
+`fill="#bada55"` (added in v1.1.0)
+--------------------------------------------------
+Applies the specified fill color to the generated `<use>` tag.
+
+
 `file="/relative/path/to/svgdefs.svg"`
 --------------------------------------------------
 The .svg file to use for this instance. It can either be used as an override of the regular file specified in `index.php`, or as a way of avoiding alterations to `index.php` altogether.
@@ -93,10 +98,20 @@ The template code `{exp:svg:single:home class="myclass"}` would produce:
 	2:		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/svgdefs.svg#icon-home"></use>
 	3:	</svg>
 
-By adding a title parameter, the code `{exp:svg:single:home class="myclass" title="My Title"}` would produce:
+By adding `title` and `fill` parameters, the code `{exp:svg:single:home class="myclass" title="My Title" fill="#bada55"}` would produce:
 
 	1:	<svg class="icon icon-home myclass">
-	2:		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/svgdefs.svg#icon-home" aria-labelledby="title__home">
+	2:		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/svgdefs.svg#icon-home" fill="#bada55" aria-labelledby="title__home">
 	3:  	 	<title id="title__home">My Title</title>
 	4:		</use>
 	5:	</svg>
+
+
+Version History
+========================================
+
+1.1.0 (2015-11-12) - Added `fill` parameter for fill color overriding
+
+1.0.1 (2015-09-28) - Updated documentation
+
+1.0.0 (2015-09-27) - Initial release

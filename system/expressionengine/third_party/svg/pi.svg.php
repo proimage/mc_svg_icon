@@ -10,7 +10,7 @@
 
 $plugin_info = array(
 	'pi_name'       => 'MC SVG Icons',
-	'pi_version'    => '1.1',
+	'pi_version'    => '1.1.0',
 	'pi_author'     => 'Michael C.',
 	'pi_author_url' => 'http://www.pro-image.co.il',
 	'pi_description'=> 'Simple plugin to enable easy use of external SVG icons in EE2.',
@@ -190,7 +190,7 @@ Parameters
   Adds a <title> tag to the generated <svg> and links it to the <use> tag using aria-labelledby.
 
 
-  fill="#bada55" (added in v1.1)
+  fill="#bada55" (added in v1.1.0)
   --------------------------------------------------
   Applies the specified fill color to the generated <use> tag.
 
@@ -245,13 +245,23 @@ The template code {exp:svg:single:home class="myclass"} would produce:
   2:   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/svgdefs.svg#icon-home"></use>
   3: </svg>
 
-By adding a title parameter, the code {exp:svg:single:home class="myclass" title="My Title"} would produce:
+By adding `title` and `fill` parameters, the code {exp:svg:single:home class="myclass" title="My Title" fill="#bada55"} would produce:
 
   1: <svg class="icon icon-home myclass">
-  2:   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/svgdefs.svg#icon-home" aria-labelledby="title__home">
+  2:   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/svgdefs.svg#icon-home" fill="#bada55" aria-labelledby="title__home">
   3:     <title id="title__home">My Title</title>
   4:   </use>
   5: </svg>
+
+
+Version History
+========================================
+
+1.1.0 (2015-11-12) - Added `fill` parameter for fill color overriding
+
+1.0.1 (2015-09-28) - Updated documentation
+
+1.0.0 (2015-09-27) - Initial release
 
 
 A Note of Copy-Pasta Warning
@@ -260,14 +270,6 @@ A Note of Copy-Pasta Warning
 Many lines in this usage text are indented using special em-space characters (since EE strips away any tabs or regular spaces). If you copy these into an EE template, it will translate them into &emsp; entities and you'll merely end up with some extra spacing here and there.
 
 However, if you copy them into a .php file (for example, your index.php), the PHP processor will throw an error... so don't do that.
-
-
-Version History
-========================================
-
-1.1 (2015-11-12) - Added `fill` parameter for fill color overriding
-
-1.0 (2015-10-??) - Initial release
 
 
 <?php
